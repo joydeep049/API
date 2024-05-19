@@ -1,5 +1,5 @@
-import requests
 from flask import Flask, jsonify, render_template
+import requests
 
 app = Flask(__name__)
 
@@ -53,8 +53,10 @@ def identify_citations(data):
 @app.route('/')
 def index():
     data = fetch_data()
+    print(f"Data fetched: {data}")  # Debugging print
     citations = identify_citations(data)
-    return render_template('template.html', citations=citations)
+    print(f"Citations identified: {citations}")  # Debugging print
+    return render_template('index.html', citations=citations)
 
 @app.route('/api/citations')
 def api_citations():
