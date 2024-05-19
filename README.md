@@ -1,5 +1,5 @@
 ### API
-<h3>Simple Flask application to fetch and display citations from "https://devapi.beyondchats.com/api/get_message_with_sources".</br></h3>h3>
+<h3>Simple Flask application to fetch and display citations from "https://devapi.beyondchats.com/api/get_message_with_sources".</br></h3>
 
 <h3>To run this code</h3>
 
