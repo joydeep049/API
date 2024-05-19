@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Citations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .citation {
+            margin-bottom: 20px;
+        }
+        .response-text {
+            font-weight: bold;
+        }
+        .source {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Citations</h1>
+    <div id="citations">
+        {% for item in citations %}
+        <div class="citation">
+            <div class="response-text">{{ item.response_text }}</div>
+            <div class="sources">
+                {% if item.citations %}
+                    {% for source in item.citations %}
+                        <div class="source">
+                            <div>ID: {{ source.id }}</div>
+                            <div>Context: {{ source.context }}</div>
+                            {% if source.link %}
+                            <div>Link: <a href="{{ source.link }}">{{ source.link }}</a></div>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="source">No citations found</div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
